@@ -16,7 +16,7 @@ export default class StripeAddCard extends Component {
         {...this.props}
         addCardHandler={(cardNumber, expiry, cvc) => {
           const [expiryMonth, expiryYear] = expiry.split('/')
-          return getCardToken(cardNumber, expiryMonth, expiryYear, cvc, this.props.publicStripeKey).then(token => this.props.addCardTokenHandler(token))
+          return getCardToken(cardNumber, expiryMonth, expiryYear, cvc, this.props.publicStripeKey).then(token => this.props.addCardTokenHandler(token, cardNumber, expiry, cvc))
         }}
       />
     )

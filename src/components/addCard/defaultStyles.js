@@ -21,8 +21,8 @@ const cardFieldContainer = {
 }
 const button = {
   ...touchableOpacityContainer,
-  marginTop: 20,
-  marginBottom: 20,
+  marginTop: 5,
+  marginBottom: 5,
   borderBottomWidth: 1,
   borderTopWidth: 1,
   borderColor: grey,
@@ -39,6 +39,7 @@ export default {
   activityIndicatorContainer: {
     flex: 1,
     justifyContent: 'center',
+    alignItems: 'center'
   },
   addButton: button,
   addButtonText: buttonText,
@@ -72,9 +73,9 @@ export default {
     ...textInput,
   },
   errorTextContainer: {
-    height: 71,
+    paddingVertical: 10,
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'center'
   },
   errorText: {
     fontSize: 16,

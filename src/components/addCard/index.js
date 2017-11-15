@@ -162,7 +162,7 @@ export default class AddCard extends Component {
             keyboardType="numeric"
             underlineColorAndroid="transparent"
             style={styles.cardNumberInput}
-            placeholderTextColor={this.props.placeholderTextColor}
+            // placeholderTextColor={this.props.placeholderTextColor}
             onChangeText={rawCardNumber => {
               const cardNumber = s(rawCardNumber).replaceAll(' ', '').s
               this.setState({ cardNumber: cardNumber })
@@ -190,7 +190,7 @@ export default class AddCard extends Component {
               keyboardType="numeric"
               underlineColorAndroid="transparent"
               style={styles.monthYearTextInput}
-              placeholderTextColor={this.props.placeholderTextColor}
+              // placeholderTextColor={this.props.placeholderTextColor}
               onChangeText={expiry => {
                 const newExpiry = formatMonthYearExpiry(expiry, calculatedState.expiry)
                 this.setState({ expiry: newExpiry })
@@ -220,7 +220,7 @@ export default class AddCard extends Component {
               keyboardType="numeric"
               underlineColorAndroid="transparent"
               style={styles.cvcInput}
-              placeholderTextColor={this.props.placeholderTextColor}
+              // placeholderTextColor={this.props.placeholderTextColor}
               onChangeText={cvc => this.setState({ cvc })}
               value={calculatedState.cvc}
               placeholder={this.props.cvcPlaceholderText}
@@ -233,9 +233,6 @@ export default class AddCard extends Component {
               }}
             />
           </View>
-        </View>
-        <View style={styles.errorTextContainer}>
-          <Text style={styles.errorText}>{calculatedState.error}</Text>
         </View>
         {this.props.scanCardVisible ? (
           <TouchableOpacity
@@ -293,6 +290,12 @@ export default class AddCard extends Component {
         >
           <Text style={styles.addButtonText}>{this.props.addCardButtonText}</Text>
         </TouchableOpacity>
+
+        {calculatedState.error ? (
+          <View style={styles.errorTextContainer}>
+            <Text style={styles.errorText}>{calculatedState.error}</Text>
+          </View>
+        ) : null}
       </View>
     )
     return (
