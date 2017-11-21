@@ -45,7 +45,7 @@ export default {
   addButtonText: buttonText,
   addCardContainer: {
     flex: 1,
-    justifyContent: 'flex-end',
+    justifyContent: 'flex-start',
     backgroundColor: '#F2F2F5',
   },
   cardExpiryImage: {
