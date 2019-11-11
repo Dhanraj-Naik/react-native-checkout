@@ -161,8 +161,8 @@ export default class AddCard extends Component {
             ref="cardNumberInput"
             keyboardType="numeric"
             underlineColorAndroid="transparent"
-            style={styles.cardNumberInput}
-            // placeholderTextColor={this.props.placeholderTextColor}
+            style={[styles.cardNumberInput, this.props.cardNumberInput]}
+            placeholderTextColor={this.props.placeholderTextColor}
             onChangeText={rawCardNumber => {
               const cardNumber = s(rawCardNumber).replaceAll(' ', '').s
               this.setState({ cardNumber: cardNumber })
@@ -189,8 +189,8 @@ export default class AddCard extends Component {
               maxLength={5}
               keyboardType="numeric"
               underlineColorAndroid="transparent"
-              style={styles.monthYearTextInput}
-              // placeholderTextColor={this.props.placeholderTextColor}
+              style={[styles.monthYearTextInput, this.props.monthYearTextInput]}
+              placeholderTextColor={this.props.placeholderTextColor}
               onChangeText={expiry => {
                 const newExpiry = formatMonthYearExpiry(expiry, calculatedState.expiry)
                 this.setState({ expiry: newExpiry })
@@ -219,8 +219,8 @@ export default class AddCard extends Component {
               ref="cvcInput"
               keyboardType="numeric"
               underlineColorAndroid="transparent"
-              style={styles.cvcInput}
-              // placeholderTextColor={this.props.placeholderTextColor}
+              style={[styles.cvcInput, this.props.cvcInput]}
+              placeholderTextColor={this.props.placeholderTextColor}
               onChangeText={cvc => this.setState({ cvc })}
               value={calculatedState.cvc}
               placeholder={this.props.cvcPlaceholderText}
