@@ -69,9 +69,6 @@ export default class AddCard extends Component {
       expiry: '',
       cvc: '',
     }
-  }
-
-  componentWillMount() {
     if (CardIOUtilities.preload) {
       CardIOUtilities.preload()
     }
