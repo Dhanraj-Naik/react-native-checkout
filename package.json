@@ -54,8 +54,8 @@
     "sort-package-json": "^1.7.1"
   },
   "peerDependencies": {
-    "react": "16.0.0-alpha.12",
-    "react-native": "0.48.4"
+    "react": "18.3.1",
+    "react-native": "0.75.3"
   },
   "lint-staged": {
     "src/**/*.js": [
